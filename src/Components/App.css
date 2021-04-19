@@ -1,0 +1,78 @@
+.app {
+  background-color: #141414;
+}
+
+.row {
+  color: #fff;
+  margin: 3vw 0;
+  box-sizing: border-box;
+  padding: 0 4%;
+}
+
+.row ::-webkit-scrollbar {
+  display: none;
+}
+
+.row__title {
+  color: #e5e5e5;
+  font-weight: 700;
+  line-height: 1.25vw;
+  font-size: 12px;
+  display: inline-block;
+}
+
+.cards {
+  display: flex;
+  overflow-y: hidden;
+  overflow-x: scroll;
+}
+
+.card {
+  object-fit: contain;
+  max-height: 120px;
+  padding: 2px;
+  border-radius: 8px;
+}
+
+.preview__container {
+  height: 360px;
+  width: 320px;
+  background-color: rgb(24, 24, 24);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.popup__poster {
+  max-height: 180px;
+}
+
+.portal__zoomin {
+  animation: zoomin 3s;
+}
+
+.portal__zoomout {
+  animation: zoomout 3s;
+}
+
+@keyframes zoomin {
+  0% {
+    transform-origin: 45% 45%;
+    /* transform: scale(0.67); */
+    transform: scale(0.67, 0.35);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes zoomout {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(0.67, 0.35);
+    /* transform: scale(0.67, 0.67); */
+  }
+}
