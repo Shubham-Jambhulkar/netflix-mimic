@@ -35,11 +35,22 @@
 }
 
 .preview__container {
-  height: 360px;
-  width: 320px;
+  height: var(--preview__container-height);
+  width: var(--preview__container-width);
   background-color: rgb(24, 24, 24);
   border-radius: 8px;
   overflow: hidden;
+  opacity: 1;
+}
+
+.portal__zoomout .preview__container {
+  background-color: transparent;
+  transition: background-color 1s ease-out;
+}
+
+.portal__zoomout .preview__content {
+  opacity: 0;
+  transition: opacity 1s ease-out;
 }
 
 .preview__content {
@@ -60,8 +71,8 @@
 
 @keyframes zoomin {
   0% {
-    transform: scale(0.7);
-    transform-origin: bottom;
+    transform: scale(0.67);
+    transform-origin: var(--transform-origin);
   }
 
   100% {
@@ -76,7 +87,7 @@
   }
 
   100% {
-    transform: scale(0.7);
-    transform-origin: bottom;
+    transform: scale(0.67);
+    transform-origin: var(--transform-origin);
   }
 }

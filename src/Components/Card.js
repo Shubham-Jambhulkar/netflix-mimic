@@ -20,11 +20,7 @@ const Card = ({ name, imgSrc }) => {
       }}
     >
       {showModal ? (
-        <Portal
-          coords={coords}
-          closePortal={() => setShowModal(false)}
-          delay={2900}
-        >
+        <Portal coords={coords} closePortal={() => setShowModal(false)}>
           <Preview>
             <img
               src={`${imgBaseUrl}${imgSrc}`}
