@@ -62,11 +62,11 @@
 }
 
 .portal__zoomin {
-  animation: zoomin 3s;
+  animation: zoomin 1s;
 }
 
 .portal__zoomout {
-  animation: zoomout 3s;
+  animation: zoomout 1s;
 }
 
 @keyframes zoomin {

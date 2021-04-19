@@ -24,7 +24,7 @@ const Portal = ({ coords, closePortal, children }) => {
     if (isClosing) {
       setTimeout(() => {
         closePortal();
-      }, 2900);
+      }, 900);
     }
   }, [isClosing, closePortal]);
 

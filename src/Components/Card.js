@@ -1,7 +1,21 @@
 import React, { useState } from "react";
 import { imgBaseUrl } from "../Service";
+import { debounce } from "../util";
 import Portal from "./Portal";
 import Preview from "./Preview";
+
+let left;
+const mouseMoveHandler = (e, setCoords, setShowModal) => {
+  if (left === e.target.offsetLeft) {
+    setCoords({
+      left: e.target.offsetLeft,
+      top: e.target.offsetTop,
+      height: e.target.clientHeight,
+      width: e.target.clientWidth
+    });
+    setShowModal(true);
+  }
+};
 
 const Card = ({ name, imgSrc }) => {
   const [showModal, setShowModal] = useState(false);
@@ -10,14 +24,12 @@ const Card = ({ name, imgSrc }) => {
   return (
     <div
       onMouseEnter={(e) => {
-        setCoords({
-          left: e.target.offsetLeft,
-          top: e.target.offsetTop,
-          height: e.target.clientHeight,
-          width: e.target.clientWidth,
-        });
-        setShowModal(true);
+        left = e.target.offsetLeft;
       }}
+      onMouseMove={debounce(
+        (e) => mouseMoveHandler(e, setCoords, setShowModal),
+        500
+      )}
     >
       {showModal ? (
         <Portal coords={coords} closePortal={() => setShowModal(false)}>
