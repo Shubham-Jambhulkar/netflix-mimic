@@ -31,6 +31,7 @@ const Card = ({ name, imgSrc }) => {
               alt={name}
               className="card popup__poster"
             />
+            <div className="preview__content">{name}</div>
           </Preview>
         </Portal>
       ) : null}

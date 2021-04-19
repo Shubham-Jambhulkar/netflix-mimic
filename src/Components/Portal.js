@@ -22,9 +22,9 @@ const Portal = ({ coords, closePortal, children, delay }) => {
     if (isClosing) {
       setTimeout(() => {
         closePortal();
-      }, 2900);
+      }, delay);
     }
-  }, [isClosing]);
+  }, [isClosing, closePortal, delay]);
 
   const onMouseLeave = () => {
     if (delay) setIsClosing(true);

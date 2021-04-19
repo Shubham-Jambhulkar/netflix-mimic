@@ -42,6 +42,10 @@
   overflow: hidden;
 }
 
+.preview__content {
+  color: #fff;
+}
+
 .popup__poster {
   max-height: 180px;
 }
@@ -56,9 +60,8 @@
 
 @keyframes zoomin {
   0% {
-    transform-origin: 45% 45%;
-    /* transform: scale(0.67); */
-    transform: scale(0.67, 0.35);
+    transform: scale(0.7);
+    transform-origin: bottom;
   }
 
   100% {
@@ -69,10 +72,11 @@
 @keyframes zoomout {
   0% {
     transform: scale(1);
+    /* transform-style: initial; */
   }
 
   100% {
-    transform: scale(0.67, 0.35);
-    /* transform: scale(0.67, 0.67); */
+    transform: scale(0.7);
+    transform-origin: bottom;
   }
 }
